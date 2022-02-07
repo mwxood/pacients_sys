@@ -1,0 +1,218 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?6xn5pr');
+  src:  url('../fonts/icomoon.eot?6xn5pr#iefix') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?6xn5pr') format('truetype'),
+  url('../fonts/icomoon.woff?6xn5pr') format('woff'),
+  url('../fonts/icomoon.svg?6xn5pr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-warning:before {
+  content: "\e900";
+}
+.icon-clear:before {
+  content: "\e901";
+}
+.icon-keyboard_backspace:before {
+  content: "\e902";
+}
+.icon-local_grocery_store:before {
+  content: "\e903";
+}
+.icon-arrow_upward:before {
+  content: "\e904";
+}
+.icon-person:before {
+  content: "\e905";
+}
+.icon-search:before {
+  content: "\e906";
+}
+.icon-trending_neutral:before {
+  content: "\e907";
+}
+.icon-arrow_right_alt:before {
+  content: "\e908";
+}
+.icon-location_pin:before {
+  content: "\e909";
+}
+
+// web fonts
+
+
+@font-face {
+  font-family: 'gilroy-blackitaliuploadedfile';
+  src: url('../fonts/web-fonts/gilroy-blackitalic-webfont.eot');
+  src: url('../fonts/web-fonts/gilroy-blackitalic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/web-fonts/gilroy-blackitalic-webfont.woff2') format('woff2'),
+  url('../fonts/web-fonts/gilroy-blackitalic-webfont.woff') format('woff'),
+  url('../fonts/web-fonts/gilroy-blackitalic-webfont.ttf') format('truetype'),
+  url('../fonts/web-fonts/gilroy-blackitalic-webfont.svg#gilroy-blackitaliuploadedfile') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'gilroy-bolditalicuploadedfile';
+  src: url('../fonts/web-fonts/gilroy-bolditalic-webfont.eot');
+  src: url('../fonts/web-fonts/gilroy-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/web-fonts/gilroy-bolditalic-webfont.woff2') format('woff2'),
+  url('../fonts/web-fonts/gilroy-bolditalic-webfont.woff') format('woff'),
+  url('../fonts/web-fonts/gilroy-bolditalic-webfont.ttf') format('truetype'),
+  url('../fonts/web-fonts/gilroy-bolditalic-webfont.svg#gilroy-bolditalicuploadedfile') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'gilroy-extraboldiuploadedfile';
+  src: url('../fonts/web-fonts/gilroy-extrabolditalic-webfont.eot');
+  src: url('../fonts/web-fonts/gilroy-extrabolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/web-fonts/gilroy-extrabolditalic-webfont.woff2') format('woff2'),
+  url('../fonts/web-fonts/gilroy-extrabolditalic-webfont.woff') format('woff'),
+  url('../fonts/web-fonts/gilroy-extrabolditalic-webfont.ttf') format('truetype'),
+  url('../fonts/web-fonts/gilroy-extrabolditalic-webfont.svg#gilroy-extraboldiuploadedfile') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'gilroy-heavyitaliuploadedfile';
+  src: url('../fonts/web-fonts/gilroy-heavyitalic-webfont.eot');
+  src: url('../fonts/web-fonts/gilroy-heavyitalic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/web-fonts/gilroy-heavyitalic-webfont.woff2') format('woff2'),
+  url('../fonts/web-fonts/gilroy-heavyitalic-webfont.woff') format('woff'),
+  url('../fonts/web-fonts/gilroy-heavyitalic-webfont.ttf') format('truetype'),
+  url('../fonts/web-fonts/gilroy-heavyitalic-webfont.svg#gilroy-heavyitaliuploadedfile') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'gilroy-lightitaliuploadedfile';
+  src: url('../fonts/web-fonts/gilroy-lightitalic-webfont.eot');
+  src: url('../fonts/web-fonts/gilroy-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/web-fonts/gilroy-lightitalic-webfont.woff2') format('woff2'),
+  url('../fonts/web-fonts/gilroy-lightitalic-webfont.woff') format('woff'),
+  url('../fonts/web-fonts/gilroy-lightitalic-webfont.ttf') format('truetype'),
+  url('../fonts/web-fonts/gilroy-lightitalic-webfont.svg#gilroy-lightitaliuploadedfile') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+@font-face {
+  font-family: 'gilroy-mediumitaluploadedfile';
+  src: url('../fonts/web-fonts/gilroy-mediumitalic-webfont.eot');
+  src: url('../fonts/web-fonts/gilroy-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/web-fonts/gilroy-mediumitalic-webfont.woff2') format('woff2'),
+  url('../fonts/web-fonts/gilroy-mediumitalic-webfont.woff') format('woff'),
+  url('../fonts/web-fonts/gilroy-mediumitalic-webfont.ttf') format('truetype'),
+  url('../fonts/web-fonts/gilroy-mediumitalic-webfont.svg#gilroy-mediumitaluploadedfile') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'gilroy-regularuploaded_file';
+  src: url('../fonts/web-fonts/gilroy-regular-webfont.eot');
+  src: url('../fonts/web-fonts/gilroy-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/web-fonts/gilroy-regular-webfont.woff2') format('woff2'),
+  url('../fonts/web-fonts/gilroy-regular-webfont.woff') format('woff'),
+  url('../fonts/web-fonts/gilroy-regular-webfont.ttf') format('truetype'),
+  url('../fonts/web-fonts/gilroy-regular-webfont.svg#gilroy-regularuploaded_file') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'gilroy-regularitauploadedfile';
+  src: url('../fonts/web-fonts/gilroy-regularitalic-webfont.eot');
+  src: url('../fonts/web-fonts/gilroy-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/web-fonts/gilroy-regularitalic-webfont.woff2') format('woff2'),
+  url('../fonts/web-fonts/gilroy-regularitalic-webfont.woff') format('woff'),
+  url('../fonts/web-fonts/gilroy-regularitalic-webfont.ttf') format('truetype'),
+  url('../fonts/web-fonts/gilroy-regularitalic-webfont.svg#gilroy-regularitauploadedfile') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'gilroy-semiboldituploadedfile';
+  src: url('../fonts/web-fonts/gilroy-semibolditalic-webfont.eot');
+  src: url('../fonts/web-fonts/gilroy-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/web-fonts/gilroy-semibolditalic-webfont.woff2') format('woff2'),
+  url('../fonts/web-fonts/gilroy-semibolditalic-webfont.woff') format('woff'),
+  url('../fonts/web-fonts/gilroy-semibolditalic-webfont.ttf') format('truetype'),
+  url('../fonts/web-fonts/gilroy-semibolditalic-webfont.svg#gilroy-semiboldituploadedfile') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'gilroy-thinitalicuploadedfile';
+  src: url('../fonts/web-fonts/gilroy-thinitalic-webfont.eot');
+  src: url('../fonts/web-fonts/gilroy-thinitalic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/web-fonts/gilroy-thinitalic-webfont.woff2') format('woff2'),
+  url('../fonts/web-fonts/gilroy-thinitalic-webfont.woff') format('woff'),
+  url('../fonts/web-fonts/gilroy-thinitalic-webfont.ttf') format('truetype'),
+  url('../fonts/web-fonts/gilroy-thinitalic-webfont.svg#gilroy-thinitalicuploadedfile') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'gilroy-ultralightuploadedfile';
+  src: url('../fonts/web-fonts/gilroy-ultralightitalic-webfont.eot');
+  src: url('../fonts/web-fonts/gilroy-ultralightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/web-fonts/gilroy-ultralightitalic-webfont.woff2') format('woff2'),
+  url('../fonts/web-fonts/gilroy-ultralightitalic-webfont.woff') format('woff'),
+  url('../fonts/web-fonts/gilroy-ultralightitalic-webfont.ttf') format('truetype'),
+  url('../fonts/web-fonts/gilroy-ultralightitalic-webfont.svg#gilroy-ultralightuploadedfile') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'gilroy-blackitaliuploadedfile';
+  src: url('../fonts/web-fonts/gilroy-blackitalic-webfont.eot');
+  src: url('../fonts/web-fonts/gilroy-blackitalic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/web-fonts/gilroy-blackitalic-webfont.woff2') format('woff2'),
+  url('../fonts/web-fonts/gilroy-blackitalic-webfont.woff') format('woff'),
+  url('../fonts/web-fonts/gilroy-blackitalic-webfont.ttf') format('truetype'),
+  url('../fonts/web-fonts/gilroy-blackitalic-webfont.svg#gilroy-blackitaliuploadedfile') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+  

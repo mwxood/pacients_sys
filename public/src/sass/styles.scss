@@ -1,0 +1,62 @@
+// Bootstrap imports
+@import "bootstrap/scss/bootstrap-grid";
+
+// Custom imports
+@import 'variables';
+@import 'helper';
+@import 'modules/content';
+@import 'modules/header';
+@import 'modules/navigation';
+@import 'modules/category';
+@import 'modules/login';
+@import 'modules/loader';
+@import 'modules/overlay';
+@import 'modules/pagination';
+@import 'modules/scroll';
+@import 'modules/flashMessages';
+@import 'modules/animate';
+@import 'modules/alert';
+@import 'modules/search';
+@import 'modules/tabs';
+@import 'modules/footer';
+
+
+img {max-width: 100%;}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+p + p {
+  margin-top: 10px;
+}
+
+html, body {
+  height: 100%;
+}
+
+main {
+  min-height: 100%;
+}
+h1, h2, h3, h4, h5, h6 {font-weight: 400; margin-bottom: 20px;}
+
+h1 {font-size: 36px;}
+h2 {font-size: 32px;}
+h3 {font-size: 28px;}
+h4 {font-size: 24px;}
+h5 {font-size: 20px;}
+h6 {font-size: 16px;}
+
+a {
+  transition: color .3s;
+}
