@@ -1,85 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
-    <base href="/" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   
-    <link rel="stylesheet" href="assets/css/frontend.bundle.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Регистрация в системата</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="<?= site_url('assets/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="<?= site_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
 </head>
 <body>
 
-<div class="login-bg">
 
-    <div class="login-content">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
 
-            <div class="logo-holder">
-    
-        <span class="logo-text">boX CMS</span>
-    </div>
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">PSP.RAREDIS.ORG</h1>
+                                </div>
+                                <form id="login-id" class="user" action="<?= base_url('auth/save'); ?>" method="post">
+                                <?= csrf_field(); ?>
 
+                                <?php if(!empty(session()->getFlashdata('fail'))): ?>
 
+                                    <div class="alert alert-danger">
+                                        <?= session()->getFlashdata('fail'); ?>
+                                    </div>
 
-                <form id="login-id" action="<?= base_url('auth/save'); ?>" method="post">
-                <?= csrf_field(); ?>
+                                <?php endif ?>
 
-                <?php if(!empty(session()->getFlashdata('fail'))): ?>
-                
-                    <div class="alert alert-danger">
-                        <?= session()->getFlashdata('fail'); ?>
+                                <?php if(!empty(session()->getFlashdata('success'))): ?>
+
+                                    <div class="alert alert-success">
+                                        <?= session()->getFlashdata('success'); ?>
+                                    </div>
+
+                                <?php endif ?>
+                                    
+                                <div class="form-group">
+                                    <span class="text-danger d-block mb-3"><?= isset($validation) ? display_error($validation, 'name') : '' ?></span>
+                                    <input type="text" class="form-control form-control-user" placeholder="Потребителско име" name="name" value="<?= set_value('name'); ?>" >
+
+                                    <span class="text-danger d-block mb-3 mt-3"><?= isset($validation) ? display_error($validation, 'email') : '' ?></span>
+                                    <input type="email" class="form-control form-control-user" placeholder="Имейл" name="email" value="<?= set_value('email'); ?>" >
+                                </div>
+
+                                <div class="form-group">
+                                    <span class="text-danger d-block mb-3"><?= isset($validation) ? display_error($validation, 'password') : '' ?></span>
+                                    <input type="password" class="form-control form-control-user" placeholder="Парола" name="password" value="<?= set_value('password'); ?>">
+
+                                    <span class="text-danger d-block mt-3 mb-3"><?= isset($validation) ? display_error($validation, 'cpassword') : '' ?></span>    
+                                    <input type="password" class="form-control form-control-user" placeholder="Повторете Парола" name="cpassword" value="<?= set_value('cpassword'); ?>">
+                                </div>
+
+                                    <div class="form-group">
+                                        <input type="submit" name="submit" value="Регистрирай" class="btn btn-primary btn-user btn-block">
+                                    </div>
+                                </form>
+                                
+                            </div>
+                        </div>
+                        
                     </div>
-
-                <?php endif ?>
-
-                <?php if(!empty(session()->getFlashdata('success'))): ?>
-                
-                    <div class="alert alert-success">
-                        <?= session()->getFlashdata('success'); ?>
-                    </div>
-
-                <?php endif ?>
-                
-                
-
-                    <div class="form-group">
-                        <label for="username">
-                            <span class="text-danger"><?= isset($validation) ? display_error($validation, 'name') : '' ?></span>
-                            <input type="text" class="input-bg" placeholder="Потребителско име" name="name" value="<?= set_value('name'); ?>" >
-                        </label>
-
-                        <label for="username">
-                            <span class="text-danger"><?= isset($validation) ? display_error($validation, 'email') : '' ?></span>
-                            <input type="email" class="input-bg" placeholder="Имейл" name="email" value="<?= set_value('email'); ?>" >
-                        </label>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">
-                            <span class="text-danger"><?= isset($validation) ? display_error($validation, 'password') : '' ?></span>
-                            <input type="password" class="input-bg" placeholder="Парола" name="password" value="<?= set_value('password'); ?>">
-                        </label>
-
-                        <label for="password">
-                            <span class="text-danger"><?= isset($validation) ? display_error($validation, 'cpassword') : '' ?></span>    
-                            <input type="password" class="input-bg" placeholder="Повторете Парола" name="cpassword" value="<?= set_value('cpassword'); ?>">
-                        </label>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="submit" name="submit" value="Вход" class="btn btn-primary">
-                    </div>
-                </form>
-
+                </div>
             </div>
-
-
-
-
+        </div>
+    </div>
 </div>
+
+
 
 <footer class="footer-content">
 

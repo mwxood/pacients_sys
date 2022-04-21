@@ -19,7 +19,7 @@
 
             <div class="logo-holder">
     
-        <span class="logo-text">boX CMS</span>
+        <span class="logo-text">PSP.RAREDIS.ORG</span>
     </div>
 
 

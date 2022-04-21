@@ -31,30 +31,42 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-// $routes->get('/', 'Home::index');
+ $routes->get('/', 'Home::index');
 
 $routes->group('', ['filter'=>'AuthCheck'], function($routes) {
     $routes->get('/', 'DashboardController::index', ['as'=> 'dashboard.home']);
     $routes->get('dashboard/', 'DashboardController::index', ['as'=> 'dashboard.home']);
     $routes->get('dashboard/profile', 'DashboardController::profile', ['as'=> 'dashboard.profile']);
-    $routes->get('dashboard/pacients', 'DashboardController::pacients', ['as'=> 'dashboard.pacients']);
-    $routes->get('dashboard/create_pacient', 'DashboardController::create_pacient', ['as'=> 'dashboard.create_pacient']);
+    $routes->get('dashboard/pacients', 'PacientController::pacients', ['as'=> 'dashboard.pacients']);
+    $routes->get('dashboard/create_pacient', 'PacientController::create_pacient', ['as'=> 'dashboard.create_pacient']);
     //$routes->get('dashboard/users', 'DashboardController::users', ['as'=> 'dashboard.users']);
 //    $routes->get('auth/update_user', 'Auth::update');
     $routes->get('auth/save', 'Auth::save');
 
-    $routes->get('dashboard/delete_user/(:num)', 'Auth::delete_user/$1');
-    $routes->get('PacientController/save', 'pacientController::save');
-    $routes->get('dashboard/edit_pacient/(:num)', 'DashboardController::edit_pacient/$1');
-    $routes->get('dashboard/delete/(:num)', 'pacientController::delete/$1');
-    $routes->get('dashboard/search_pacient', 'pacientController::search_pacient/');
 
-    $routes->group('', ['filter' => 'UserRoleFilter'], function($routes) {
-        $routes->get('dashboard/users', 'DashboardController::users', ['as'=> 'dashboard.users']);
-        $routes->get('Auth/update_user/(:num)', 'Auth::update_user/$1');
-        $routes->get('Auth/edit_user/(:num)', 'Auth::edit_user/$1');
-        $routes->get('auth/register', 'Auth::register');
-    });
+    $routes->get('PacientController/save', 'PacientController::save');
+    $routes->get('dashboard/edit_pacient/(:num)', 'PacientController::edit_pacient/$1');
+    $routes->get('PacientController/update/(:num)', 'PacientController::update/$1');
+    $routes->get('dashboard/search_pacient', 'PacientController::search_pacient/');
+    $routes->get('dashboard/pacients_menu', 'PacientController::pacients_menu');
+
+//    $routes->get('dashboard/users', 'DashboardController::users', ['as'=> 'dashboard.users']);
+//    $routes->get('Auth/update_user/(:num)', 'Auth::update_user/$1');
+//    $routes->get('Auth/edit_user/(:num)', 'Auth::edit_user/$1');
+//    $routes->get('dashboard/delete_user/(:num)', 'Auth::delete_user/$1');
+//    $routes->get('auth/register', 'Auth::register');
+
+
+});
+
+$routes->group('', ['filter' => 'UserRoleFilter'], function($routes) {
+    $routes->get('dashboard/users', 'DashboardController::users', ['as'=> 'dashboard.users']);
+    $routes->get('Auth/update_user/(:num)', 'Auth::update_user/$1');
+    $routes->get('Auth/edit_user/(:num)', 'Auth::edit_user/$1');
+    $routes->get('dashboard/delete_user/(:num)', 'Auth::delete_user/$1');
+    $routes->get('auth/register', 'Auth::register');
+    $routes->get('dashboard/settings', 'SettingsController::index');
+    $routes->get('dashboard/delete/(:num)', 'pacientController::delete/$1');
 });
 
 

@@ -29,40 +29,6 @@ class DashboardController extends BaseController
         return view('dashboard/home', $data);
     }
 
-    public function pacients()
-    {
-
-        $pacientModel = new \App\Models\GetPacientsModel();
-        $pager = \Config\Services::pager();
-
-        $userModel = new \App\Models\GetUsersModel();
-        $request = service('request');
-        $searchData = $request->getGet();
-        $search = "";
-
-        if (isset($searchData) && isset($searchData['search'])) {
-            $search = $searchData['search'];
-        }
-
-        if($search == '') {
-            $pacientData = $pacientModel->paginate(4, 'group1');
-        } else {
-            $pacientData = $pacientModel->select('*')
-                ->orLike('pacient_name', $search)
-                ->orLike('egn', $search)
-                ->paginate(5);
-        }
-
-        $data = [
-            'pageTitle' => 'Пациенти',
-            'userInfo' =>  $this->userInfo,
-            'users' => $userModel->getUser(),
-            'pacients' => $pacientData,
-            'pager' => $pacientModel->pager,
-            'search' => $search
-        ];
-        return view('dashboard/pacients', $data);
-    }
 
     public function profile()
     {
@@ -75,17 +41,6 @@ class DashboardController extends BaseController
         return view('dashboard/profile', $data);
     }
 
-    public function create_pacient()
-    {
-        $userModel = new \App\Models\GetUsersModel();
-
-        $data = [
-            'pageTitle' => 'Регистрация на пациент',
-            'users' => $userModel->getUser(),
-            'userInfo' =>  $this->userInfo
-        ];
-        return view('dashboard/create_pacient', $data);
-    }
 
     public function users()
     {
@@ -101,19 +56,6 @@ class DashboardController extends BaseController
         return view('dashboard/users', $data);
     }
 
-    public function edit_pacient($id = 0) {
-        $userModel = new \App\Models\GetUsersModel();
-        $posts = new \App\Models\GetPostsModel();
-        $post = $posts->find($id);
 
-        $data = [
-            'pageTitle' => 'Начало',
-            'users' => $userModel->getUser(),
-            'userInfo' =>  $this->userInfo,
-            'post' => $post
-        ];
-
-        return view('dashboard/edit_pacient', $data);
-    }
 
 }

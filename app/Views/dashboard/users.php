@@ -2,12 +2,7 @@
 <?= $this->section('content'); ?>
     <div class="d-flex align-items-center justify-content-between mb-3">
         <h1 class="mb-5"><?= (isset($pageTitle)) ? $pageTitle : 'Document' ?></h1>
-        <a class="btn btn-primary user-register d-flex align-items-center" href="<?= site_url('/auth/register'); ?>">
-            <span class="material-icons">
-                add
-            </span>
-            Регистрация на потребител
-        </a>
+       
     </div>
 
 <?php if(!empty(session()->getFlashdata('fail'))): ?>

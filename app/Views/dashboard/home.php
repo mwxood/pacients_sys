@@ -1,38 +1,53 @@
 <?= $this->extend('layout/dashboard-layout'); ?>
 
 <?= $this->section('content'); ?>
-<h1><?= (isset($pageTitle)) ? $pageTitle : 'Document' ?></h1>
+<h1 class="mb-4"><?= (isset($pageTitle)) ? $pageTitle : 'Document' ?></h1>
 
-<ul class="category-group">
-<?php if(session()->get('userRole') == 'administrator'): ?>
-    <li>
-        <a href="<?= site_url('dashboard/users/'); ?>">
-            <span class="material-icons"><?= count($users) > 1 ? 'people' : 'person' ?></span>
-            <span class="category-title"><?= count($users) > 1 ? count($users) . ' Регистрирани потребители' : count($users) . ' Регистриран потребители' ?></span>
-        </a>
-    </li>
 
-    <li>
-        <a href="<?= site_url('auth/register/'); ?>">
-            <span class="material-icons">person</span>
-            <span class="category-title">Регистрирай потребител</span>
-        </a>
-    </li>
-<?php endif ?>
-    <li>
-        <a href="<?= site_url('dashboard/users/'); ?>">
-            <span class="material-icons">healing</span>
-            <span class="category-title"><?= count($users) > 1 ? count($users) . ' Регистрирани пациенти' : count($users) . ' Регистриран пациент' ?></span>
-        </a>
-    </li>
+<div class="row">
+    <div class="col-xl-6 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                    
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            <a href="<?= site_url('dashboard/pacients_menu/'); ?>">
+                                 Болест на Паркинсон
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa fa-hospital fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <li>
-        <a href="<?= site_url('dashboard/create_pacient/'); ?>">
-            <span class="material-icons">local_hospital</span>
-            <span class="category-title">Регистрирай пациент</span>
-        </a>
-    </li>
+    <?php if(session()->get('userRole') == 'administrator'): ?>
+    <div class="col-xl-6 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            <a href="<?= site_url('dashboard/settings/'); ?>">
+                            Настройки
+                            </a>
+                            
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-fw fa-cog fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-   
-</ul>
+    <?php endif ?>
+</div>
+
 <?= $this->endSection(); ?>

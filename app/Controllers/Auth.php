@@ -12,16 +12,19 @@ class Auth extends BaseController
         $this->userRole = session()->get('userRole');
         $this->userInfo = $this->usersModel->find($this->loggedUserID);
         helper(['url', 'form']);
+        helper('Form_helper');
     }
 
     public function index()
     {
-        return view('auth/login',);
+
+        return view('auth/login');
     }
 
     public function register() {
+
         return view('auth/register');
-    } 
+    }
 
 
     public function save() {
@@ -67,34 +70,33 @@ class Auth extends BaseController
         if(!$validation) {
             return view('auth/register', ['validation'=> $this->validator]);
         } else {
-           $name = $this->request->getPost('name');
-           $email = $this->request->getPost('email');
-           $password = $this->request->getPost('password');
+            $name = $this->request->getPost('name');
+            $email = $this->request->getPost('email');
+            $password = $this->request->getPost('password');
 
-           $values = [
-               'name' => $name,
-               'email' => $email,
-               'password' => Hash::make($password)
-           ];
+            $values = [
+                'name' => $name,
+                'email' => $email,
+                'password' => Hash::make($password)
+            ];
 
-           $usersModel = new \App\Models\UsersModel();
-           $query = $usersModel->insert($values);
+            $usersModel = new \App\Models\UsersModel();
+            $query = $usersModel->insert($values);
 
-           if(!$query) {
-               return redirect()->back()->with('fail', 'Something went wrong');
-              // return redirect()->to('register')->with('fail', 'Something went wrong');
-           } else {
+            if(!$query) {
+                return redirect()->back()->with('fail', 'Something went wrong');
+                // return redirect()->to('register')->with('fail', 'Something went wrong');
+            } else {
                 // return redirect()->to('auth/register')->with('success', 'You are now registered');
                 $last_id = $usersModel->insertID();
                 session()->set('loggetUser', $last_id);
                 return redirect()->to('/dashboard/users');
-           }
+            }
         }
     }
 
 
     public function check() {
-        
         $ga = new GoogleAuthenticator();
         $secret = 'XVQ2UIGO75XRUKJO';
         $code = $this->request->getPost('code');
@@ -128,7 +130,7 @@ class Auth extends BaseController
                     'max_length' => 'Кодът не трявба да съдържа повече от 6 символа'
                 ]
             ]
-           
+
         ]);
 
 
@@ -151,7 +153,6 @@ class Auth extends BaseController
                     if(true === $checkResult) {
                         $user_id = $user_info['id'];
                         $user_role = $user_info['role'];
-                        var_dump($user_role);
                         session()->set('loggedUser', $user_id);
                         session()->set('userRole', $user_role);
                         return redirect()->to('/');
@@ -172,9 +173,9 @@ class Auth extends BaseController
         $users = new \App\Models\UsersModel();
         $user = $users->find($id);
         $data = [
-          'pageTitle' => ucfirst($user['name']),
-          'user' => $user,
-          'userInfo' =>  $this->userInfo
+            'pageTitle' => ucfirst($user['name']),
+            'user' => $user,
+            'userInfo' =>  $this->userInfo
         ];
         return view('auth/edit_user', $data);
     }
@@ -221,26 +222,26 @@ class Auth extends BaseController
         if(!$validation) {
             return view('auth/edit_user', ['validation'=> $this->validator]);
         } else {
-           $name = $this->request->getPost('name');
-           $email = $this->request->getPost('email');
-           $password = $this->request->getPost('password');
-           $role = $this->request->getPost('role');
+            $name = $this->request->getPost('name');
+            $email = $this->request->getPost('email');
+            $password = $this->request->getPost('password');
+            $role = $this->request->getPost('role');
 
-           $values = [
-               'name' => $name,
-               'email' => $email,
-               'role' => $role,
-               'password' => Hash::make($password)
-           ];
+            $values = [
+                'name' => $name,
+                'email' => $email,
+                'role' => $role,
+                'password' => Hash::make($password)
+            ];
 
-           $usersModel = new \App\Models\UsersModel();
-           $query = $usersModel->update($id, $values);
+            $usersModel = new \App\Models\UsersModel();
+            $query = $usersModel->update($id, $values);
 
-           if(!$query) {
-               return redirect()->back()->with('fail', 'Something went wrong');
-           } else {
+            if(!$query) {
+                return redirect()->back()->with('fail', 'Something went wrong');
+            } else {
                 return redirect()->to('/dashboard/users');
-           }
+            }
         }
 
     }
@@ -267,5 +268,5 @@ class Auth extends BaseController
             return redirect()->to('/auth?access=out')->with('fail', 'Вие сте излезнали!');
         }
     }
-    
+
 }

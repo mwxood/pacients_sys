@@ -1,0 +1,39 @@
+.tabs-nav {
+  li {
+    display: inline-block;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.active-nav {
+      a {
+        background: #34495e;
+        color: #fff;
+      }
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: #2c3e50;
+      background: #ecf0f1;
+      padding: 13px;
+      position: relative;
+      font-size: 14px;
+      &:hover {
+        background: #34495e;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.tab-content {
+  display: none;
+  padding: 30px 0;
+  &.active-content {
+    display: block;
+  }
+}

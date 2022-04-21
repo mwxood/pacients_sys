@@ -10,7 +10,7 @@ class UserRoleFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if(session()->get('userRole') == 'moderator' && !session()->has('loggedUser')) {
+        if(session()->get('userRole') == 'moderator' || !session()->has('loggedUser')) {
              return redirect()->back();
         }
     }
