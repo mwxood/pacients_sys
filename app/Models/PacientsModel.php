@@ -35,6 +35,7 @@ class PacientsModel extends Model
         'poiasninie_na_statut',
         'nomer_na_pompa',
         'versia_na_pompa',
+        'nevrolog_titracia',
         'data_na_postaviane_peg',
         'data_za_podmiana_peg',
         'medicinsko_zavedenie_peg',

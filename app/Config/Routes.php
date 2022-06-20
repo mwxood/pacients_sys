@@ -39,23 +39,15 @@ $routes->group('', ['filter'=>'AuthCheck'], function($routes) {
     $routes->get('dashboard/profile', 'DashboardController::profile', ['as'=> 'dashboard.profile']);
     $routes->get('dashboard/pacients', 'PacientController::pacients', ['as'=> 'dashboard.pacients']);
     $routes->get('dashboard/create_pacient', 'PacientController::create_pacient', ['as'=> 'dashboard.create_pacient']);
-    //$routes->get('dashboard/users', 'DashboardController::users', ['as'=> 'dashboard.users']);
-//    $routes->get('auth/update_user', 'Auth::update');
     $routes->get('auth/save', 'Auth::save');
-
 
     $routes->get('PacientController/save', 'PacientController::save');
     $routes->get('dashboard/edit_pacient/(:num)', 'PacientController::edit_pacient/$1');
     $routes->get('PacientController/update/(:num)', 'PacientController::update/$1');
     $routes->get('dashboard/search_pacient', 'PacientController::search_pacient/');
     $routes->get('dashboard/pacients_menu', 'PacientController::pacients_menu');
-
-//    $routes->get('dashboard/users', 'DashboardController::users', ['as'=> 'dashboard.users']);
-//    $routes->get('Auth/update_user/(:num)', 'Auth::update_user/$1');
-//    $routes->get('Auth/edit_user/(:num)', 'Auth::edit_user/$1');
-//    $routes->get('dashboard/delete_user/(:num)', 'Auth::delete_user/$1');
-//    $routes->get('auth/register', 'Auth::register');
-
+    $routes->get('dashboard/view_all_pacients', 'PacientController::view_all_pacients');
+    $routes->get('dashboard/view_pacient/(:num)', 'PacientController::view_pacient/$1');
 
 });
 
@@ -66,7 +58,7 @@ $routes->group('', ['filter' => 'UserRoleFilter'], function($routes) {
     $routes->get('dashboard/delete_user/(:num)', 'Auth::delete_user/$1');
     $routes->get('auth/register', 'Auth::register');
     $routes->get('dashboard/settings', 'SettingsController::index');
-    $routes->get('dashboard/delete/(:num)', 'pacientController::delete/$1');
+    $routes->get('dashboard/delete/(:num)', 'PacientController::delete/$1');
 });
 
 
@@ -75,23 +67,6 @@ $routes->group('', ['filter' => 'AlreadyLoggedInFilter'], function($routes) {
     $routes->get('/auth', 'Auth::index');
     $routes->get('/auth/confirm', 'Auth::confirm');
 });
-
-
-//$routes->group('', ['filter' => 'UserRoleFilter'], function($routes) {
-//   // $routes->get('dashboard/users', 'DashboardController::users', ['as'=> 'dashboard.users']);
-//    $routes->get('dashboard/delete/(:num)', 'pacientController::delete/$1');
-//    $routes->get('dashboard/delete_user/(:num)', 'Auth::delete_user/$1');
-//    $routes->get('Auth/edit_user/(:num)', 'Auth::edit_user/$1');
-//    $routes->get('Auth/update_user/(:num)', 'Auth::update_user/$1');
-//    $routes->get('Auth/edit_user/(:num)', 'Auth::edit_user/$1');
-//});
-
-
-
-
-// $routes->group('auth', function($routes) {
-   
-// });
 
 /*
  * --------------------------------------------------------------------
